@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Day-01 創建專案.md",
+                "file": "Vue/Day-01 創建專案.md",
                 "mode": "source",
                 "source": false
               },
@@ -184,6 +184,7 @@
   "lastOpenFiles": [
     "README.md",
     "Day-01 創建專案.md",
+    "Vue/Day-01 創建專案.md",
     "Vue"
   ]
 }
