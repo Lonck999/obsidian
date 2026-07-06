@@ -3,6 +3,25 @@
 `ref`在script操作時需要加上.value，`reactive`則不用，會出現差別是為底層邏輯設置就不同。
 我們的接著往下看。
 
+#### 實際操作
+```javascript
+<script setup>
+import { ref } from 'vue'
+
+const num = ref(0)
+
+</script>
+
+<template>
+    <h1>Documentation{{ num }}</h1>
+    <button @click="num++">加加</button>
+</template>
+```
+ref是Vue裡面最常用的function之一，它可以用來建立響應式資料，它會把基本型別（如數字、字串）包成一個物件，並透過這個物件的.value屬性讀寫這個值，所以操作時需要加上.value才能讀取或修改。
+
+點下面的按鈕它會執行`const num = ref(0)`的++運算。
+一點`{{ num }}`就會馬上跳到1。
+
 #### ref的底層邏輯
 `ref`的底層邏輯是讓「基本型別（如數字、字串）」也能擁有像物件一樣的響應式能力（被攔截讀寫、收集依賴、觸發更新）。
 
