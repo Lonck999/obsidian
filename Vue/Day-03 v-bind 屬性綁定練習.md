@@ -100,6 +100,73 @@ const buttonAttrs = {
 </template>
 ```
 
+## 實作練習
+
+### (a) 練習程式碼
+
+**:src 綁定**
+```vue
+<script setup>
+import { ref } from 'vue'
+const imgUrl = ref('https://picsum.photos/id/237/300/200')
+</script>
+
+<template>
+  <img :src="imgUrl" alt="測試圖片">
+</template>
+```
+
+**:class 物件語法**
+```vue
+<script setup>
+import { ref } from 'vue'
+const isBold = ref(false)
+
+function toggleBold() {
+  isBold.value = !isBold.value
+}
+</script>
+
+<template>
+  <p :class="{ 'text-red': isBold, 'font-bold': isBold }">這段文字會變色變粗</p>
+  <button @click="toggleBold">切換樣式</button>
+</template>
+
+<style>
+.text-red { color: red; }
+.font-bold { font-weight: bold; }
+</style>
+```
+
+**:style 物件語法**
+```vue
+<script setup>
+import { ref } from 'vue'
+const bgColor = ref('blue')
+
+function toggleColor() {
+  bgColor.value = bgColor.value === 'blue' ? 'green' : 'blue'
+}
+</script>
+
+<template>
+  <div :style="{ backgroundColor: bgColor, width: '100px', height: '100px' }"></div>
+  <button @click="toggleColor">切換背景色</button>
+</template>
+```
+
+### (b) 實際操作結果
+
+> 跟程式碼一樣。
+
+### (c) 卡關與解決方式
+
+> 無。
+
+### (d) 心得
+
+> 了解了 v-bind 綁定屬性的用途，感覺以後會很常用到。
+
 ## 小撇步：Vue 3.4+ 同名簡寫法
 在 Vue 3.4 及更新版本中，如果屬性名稱與變數名稱一模一樣，可以進一步簡寫：
 ```javascript
